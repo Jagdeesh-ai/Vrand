@@ -5,7 +5,7 @@ const ytdl = require('ytdl-core');
 const { YTSearcher } = require('ytsearcher');
  
 const searcher = new YTSearcher({
-    key: "AIzaSyAI6NtlLDdDiHYf1lE4OJnkQJDrOF0FZ98",
+    key: process.env.youtube_api,
     revealed: true
 });
  
@@ -133,4 +133,4 @@ client.on("message", async(message) => {
         serverQueue.connection.dispatcher.resume()
         message.channel.send("The song has been resumed!!")     }
 })
-client.login("ODA0NjcxNTY0Nzc5ODgwNTAw.YBPuyw.mctLzqcPZgUhocYY1obpWiJmfXk");
+client.login(process.env.token);
